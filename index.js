@@ -1,5 +1,5 @@
 class User {
-    constructor({name, surname}) {
+    constructor(name, surname) {
         this._name = name;
         this._surname = surname;
     }
@@ -49,8 +49,8 @@ class User {
 }
 
 class Student extends User {
-    constructor({name, surname, year}) {
-        super({name, surname});
+    constructor(name, surname, year) {
+        super(name, surname);
         this._year = year;
     }
 
@@ -122,25 +122,11 @@ class Group {
     }
 }
 
-const student1 = new Student({
-    name: 'Vasya',
-    surname: 'Pupkin',
-    year: 2019
-})
-const student2 = new Student({
-    name: 'Petya',
-    surname: 'Zadov',
-    year: 2019
-})
-const student3 = new Student({
-    name: 'john',
-    surname: 'Uick',
-    year: 2019
-})
-const student4 = new Student({
-    name: 'Jim',
-    surname: 'Reynor',
-    year: 2019
-})
+const student1 = new Student('Vasya', 'Pupkin', 2019);
+const student2 = new Student('Petya', 'Zadov', 2019);
+const student3 = new Student('Ivan', 'Kuvalda', 2019);
+const student4 = new Student('Kirill', 'Kirillov', 2019);
+
 const group = new Group('group1', student1, student2, student3);
-group.showStudents()
+group.showStudents();
+group.addStudent(student4);
